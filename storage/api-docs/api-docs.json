@@ -1,0 +1,89 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Integration Swagger in Laravel with Passport Auth Documentation",
+        "description": "Implementation of Swagger with in Laravel",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://education:3000",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "/dashboard/lessons/": {
+            "get": {
+                "tags": [
+                    "Lessons"
+                ],
+                "summary": "Get all lessons",
+                "operationId": "e1e5aed0e67df76decc43686308c2a62",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        },
+        "/dashboard/lessons": {
+            "post": {
+                "tags": [
+                    "Lessons"
+                ],
+                "summary": "Create new lesson",
+                "operationId": "c568d761f2bf3dd20eb8f05b51a44674",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "Jessica Smith",
+                                    "email": "test@gmail.com",
+                                    "password": "123123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "passport": []
+                    }
+                ]
+            }
+        }
+    }
+}
